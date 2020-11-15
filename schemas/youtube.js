@@ -4,6 +4,7 @@ import getYouTubeID from "get-youtube-id";
 const YouTubePreview = ({ value }) => {
   const id = getYouTubeID(value.url);
   const url = `https://www.youtube.com/embed/${id}`;
+  const thumbnailSrc = `https://img.youtube.com/vi/${id}/0.jpg`;
 
   if (!id) {
     return <div>Falta el ID/URL del Video.</div>;

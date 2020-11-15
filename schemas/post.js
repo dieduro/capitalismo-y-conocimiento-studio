@@ -4,6 +4,7 @@ const ejes = [
   { title: "Propiedad - Materialismo", value: "AC" },
   { title: "Materialismo - Centro", value: "AD" },
   { title: "Propiedad - Centro", value: "CD" },
+  { title: "Capitalismo - Centro", value: "BD" },
 ];
 
 export default {
@@ -14,6 +15,12 @@ export default {
     {
       name: "title",
       title: "Título",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "shortTitle",
+      title: "Título Resumido",
       type: "string",
     },
     {
@@ -31,10 +38,10 @@ export default {
       },
     },
     {
-      name: "author",
-      title: "Author",
-      type: "reference",
-      to: { type: "author" },
+      name: "authors",
+      title: "Autores",
+      type: "array",
+      of: [{ type: "reference", to: { type: "author" } }],
     },
     {
       name: "mainImage",
@@ -45,10 +52,10 @@ export default {
       },
     },
     {
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
+      name: "category",
+      title: "Categoría",
+      type: "reference",
+      to: [{ type: "category" }],
     },
     {
       name: "date",
