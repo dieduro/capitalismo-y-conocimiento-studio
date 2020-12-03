@@ -8,6 +8,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import blockContent from "./blockContent";
 import category from "./category";
 import post from "./post";
+import about from "./about";
 import author from "./author";
 import figure from "./figure";
 import youtube from "./youtube";
@@ -27,5 +28,6 @@ export default createSchema({
     blockContent,
     figure,
     youtube,
+    about,
   ]),
 });

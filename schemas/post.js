@@ -7,6 +7,8 @@ const ejes = [
   { title: "Capitalismo - Centro", value: "BD" },
 ];
 
+let category;
+
 export default {
   name: "post",
   title: "Post",
@@ -71,11 +73,13 @@ export default {
         list: ejes,
         layout: "select",
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "valorVector",
       title: "Valor Vector",
       type: "number",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "content",
